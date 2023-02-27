@@ -108,7 +108,7 @@ document.querySelector('.abordables')
     .appendChild(pElement)
     .appendChild(abordablesElements)
 
-//Code Exercice 
+//SPLICE METHOD
 const nomsDisponibles = pieces.map(piece => piece.nom)
 const prixDisponibles = pieces.map(piece => piece.prix)
 
@@ -130,3 +130,5 @@ for(let i=0 ; i < nomsDisponibles.length ; i++){
 const pElementDisponible = document.createElement('p')
 pElementDisponible.innerText = "Pièces disponibles:";
 document.querySelector('.disponibles').appendChild(pElementDisponible).appendChild(disponiblesElement)
+
+const inputPrixRange = document.querySelector("#inputPrix");
