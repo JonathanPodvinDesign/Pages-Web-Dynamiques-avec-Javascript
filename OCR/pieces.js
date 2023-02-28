@@ -90,7 +90,6 @@ for(let i = pieces.length -1 ; i >= 0; i--){
         noms.splice(i,1)
     }
 }
-console.log(noms)
 //Création de l'en-tête
 
 const pElement = document.createElement('p')
@@ -132,3 +131,11 @@ pElementDisponible.innerText = "Pièces disponibles:";
 document.querySelector('.disponibles').appendChild(pElementDisponible).appendChild(disponiblesElement)
 
 const inputPrixRange = document.querySelector("#inputPrix");
+inputPrixRange.addEventListener('input', function(){
+    const piecesFiltrees = pieces.filter(function (piece){
+        return piece.prix <= inputPrixRange.value;
+    });
+    console.log(piecesFiltrees);
+    document.querySelector(".fiches").innerHTML = "";
+    genererPieces(piecesFiltrees);
+});
